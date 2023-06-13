@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>留言板</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='#css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!----font-Awesome----->
+<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<script src="js/simplyCountdown.js"></script>
+<link href="css/style1.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<div class="header_about"> </div>
+   <div class="header-home">
+	<div class="fixed-header">
+		<div class="logo">
+			<a href="index.html">
+	          <span class="secondary">网络工程2001</span>
+	          <span class="main">张嘉鹏</span>
+	        </a>
+		</div>
+				<div class="top-nav">
+				    <span class="menu"> </span>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+					  	<li><a href="about.html">关于学校</a></li>
+					  	<li><a href="services.html">师资力量</a></li>
+					  	<li><a href="blog.html">为了读书</a></li>
+					  	<li class="active"><a href="contact.html">留言板</a></li>
+						  <li><a href="login.html">登录</a></li>	
+						  <li><a href="register.html">注册</a></li>		
+					</ul>
+				<!-- script-nav -->
+			<script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(500, function(){
+				});
+			});
+			</script>
+			<!-- //script-nav -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+        <!--script-->
+		<script>
+			$(document).ready(function(){
+				$(".top-nav li a").click(function(){
+					$(this).parent().addClass("active");
+					$(this).parent().siblings().removeClass("active");
+				});
+			});
+		</script>
+			<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-home").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop(); 
+				if(scrollpos >=navoffeset){
+					$(".header-home").addClass("fixed");
+				}else{
+					$(".header-home").removeClass("fixed");
+				}
+			 });
+			 
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+	<!--//header-->
+	<style>
+
+	 
+		#mgs {
+			width: auto;
+			color: black;
+			font-style: italic;
+			border-width: 5px;
+			margin: 0 auto;
+			/* height: 1000px; */
+			/* padding-top: 0px; */
+		}
+	 
+		#text {
+			width: 450px;
+			height: 50px;
+			padding: 20px;
+			font-size: 20px;
+		}
+		.list {
+			color: blueviolet;
+			position: relative;
+		}
+		.yu {
+			color: blueviolet;
+			position: relative;
+			right: -10px;
+			padding: 0px 0px 0px 30px;
+		}
+		.ti {
+			height: 51px;
+			padding-top: 31px;
+		}
+		.bei {
+			background-color:rgb(38 163 220 / 20%);
+			opacity: 0.8;
+			position: relative;
+			top: -10px;
+			padding: 5px 10px 10px 0px;
+			margin-bottom: -10px;
+		}
+		
+	</style>
+   <!-- <div class="grid_4"> -->
+	<div id="mgs">
+		<div class="bb">
+			<video controls width="100%" autoplay muted>
+				<source src="./video/清华大学中文宣传片-清华大学.mp4" type="video/mp4">
+				<!-- <a href="/media/cc0-videos/flower.mp4">MP4</a> -->
+			</video>
+		</div>
+        
+		<div class="bei">
+		<textarea id="text"></textarea>
+        <input class="ti" type="button" id="btn" value="comment" >
+		<a>请留下您对于本教育机构的看法，请注意言论发表需担负法律责任。</a>
+		<br>
+		<p>您的意见发表将展示于此：</p>
+		<br>
+		<ul class="yu">
+			<li>
+			很不错的学校。
+			<p></p>
+			<span>
+			2023-6-11
+			<button>删除</button>
+			</span>
+			</li>
+		</ul>
+		<ul class="yu">
+			<li>
+			这个学校的校长很帅。
+			<p></p>
+			<span>
+			2023-6-11
+			<button>删除</button>
+			</span>
+			</li>
+		</ul>
+		<ul class="yu">
+			<li>
+			这个学校的师资力量很强大。
+			<p></p>
+			<span>
+			2023-6-11
+			<button>删除</button>
+			</span>
+			</li>
+		</ul>
+        <ul class="list"></ul>
+	</div>
+    </div>
+        <script>
+			// DOM
+            var btn = document.getElementById('btn');
+			// 触发btn按钮执行
+            var list = document.querySelector('.list');
+            var text = document.getElementById('text');
+            btn.onclick = function () {
+                if (text.value == '') {
+                    alert('你没有输入内容。')
+                } else {
+                    var li = document.createElement('li');
+                     var time = new Date();
+                    var mytime = time.getFullYear() + '-' + (time.getMonth() + 1) + '-' + time.getDate();
+					// 通过innerHTML输出li.中的内容
+                    li.innerHTML = text.value + '<p></p>' +'<span>' + mytime + '\t' + '<button>删除</button></span>';
+                    text.value = '';
+					// 通过insertBofore在list节点前面插入节点li
+                    list.insertBefore(li, list.children[0]);
+                    var allB = document.querySelectorAll('button');
+                    for (var i = 0; i < allB.length; i++) {
+                        allB[i].onclick = function () {
+                            list.removeChild(this.parentNode.parentNode); // 移除掉本次节点
+                        }
+                    }
+ 
+                }
+            }
+        </script>
+		<div id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+			<div class="overlay"></div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 animate-box">
+					<div class="date-counter text-center">
+						<h2>一年的时间又快过去了</h2>
+						<h3>你学到什么了码？</h3>
+						<div class="simply-countdown simply-countdown-one"></div>
+						<p><strong>时间不等人，抓紧学习吧</strong></p>
+						<p><a href="#" class="btn btn-primary btn-lg btn-reg">开始学习!</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+		
+			// default example
+			simplyCountdown('.simply-countdown-one', {
+				year: d.getFullYear(),
+				month: d.getMonth() + 1,
+				day: d.getDate()
+			});
+		
+			//jQuery example
+			$('#simply-countdown-losange').simplyCountdown({
+				year: d.getFullYear(),
+				month: d.getMonth() + 1,
+				day: d.getDate(),
+				enableUtc: false
+			});
+			</script>
+	<div class="footer">
+		<div class="container">
+		  <div class="footer_top">
+			<div class="col-sm-3">
+			   <ul class="list1">
+			   	<h3>校区</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">河北校区</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">哈佛校区</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">清华校区</a></li>
+			     <li><a href="http://www.zhangjp.tk//">北大校区</a></li>
+			   </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="list1">
+			    <h3>校内连接</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">图书馆</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">校内FTP</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">自习室申请</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">教务系统</a></li>
+			  </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="list1">
+			  	<h3>招生专栏</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">招纳贤士</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">招生要求</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">迎新庆典</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">投资请点击</a></li>
+			  </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="socials">
+                 <li><a href="https://www.facebook.com/profile.php?id=100054048875798"><i class="fa fb fa-facebook"></i></a></li>
+                 <li><a href="#"><i class="fa tw fa-twitter"></i></a></li>
+              </ul>
+              <ul class="list2">
+				<li><strong class="phone">151 0001 3254</strong><br><small>周一 - 周五 / 9.00 - 18.00</small></li>
+				<li>请联系校方<a href="tencent://message/?uin=1753998700&Site=&Menu=yes">QQ:1753998700</a></li>
+			  </ul>
+			</div>
+			<div class="clearfix"> </div>
+		   </div>
+		 </div>
+	</div>
+	<div class="copy">
+	    <p>Copyright &copy; 张嘉鹏 网络工程2001 20300104 <a target="_blank" href="http://www.zhangjp.tk//">我的blog</a> <a target="_blank" href="https://0bigbug.github.io">我的网站</a></p>
+    </div>
+</body>
+</html>		

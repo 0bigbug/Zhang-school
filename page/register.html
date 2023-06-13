@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>注册界面</title>
+    <link rel="stylesheet" href="css/register.css" />
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='#css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!----font-Awesome----->
+<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!------ light-box-script ----->
+<script src="js/jquery.chocolat.js"></script>
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8" />
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		$('.about-grid a').Chocolat({linkImages:false});
+	});
+</script>
+<style type="text/css">
+    .FM {
+        background-color: #f0f8ff00;
+        width: 112px;
+        height: 55px;
+        position: absolute;
+        left: 1204px;
+        top: 650px;
+    }
+	.FM1 {
+        background-color: #f0f8ff00;
+        width: 130px;
+        height: 55px;
+        position: absolute;
+        left: 1204px;
+        top: 755px;
+    }
+	.FM2 {
+        background-color: #f0f8ff00;
+        width: 112px;
+        height: 55px;
+        position: absolute;
+        left: 1204px;
+        top: 860px;
+    }
+	.FM3 {
+        background-color: #f0f8ff00;
+        width: 112px;
+        height: 55px;
+        position: absolute;
+        left: 1204px;
+        top: 966px;
+    }
+	.button {
+		width: 400px;
+		height: 5rem;
+		color: #f6f6f6;
+		background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+		font-size: 1.4rem;
+		border: none;
+		border-radius: 0.5rem;
+		margin: 40px 0 0 50%;
+		transform: translateX(-50%);
+	}
+</style>
+</head>
+
+<body>
+    <div class="header_about"> </div>
+  <div class="header-home">
+	<div class="fixed-header">
+		<div class="logo">
+			<a href="index.html">
+	          <span class="secondary">网络工程2001</span>
+	          <span class="main">张嘉鹏</span>
+	        </a>
+		</div>
+				<div class="top-nav">
+				    <span class="menu"> </span>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+					  	<li><a href="about.html">关于学校</a></li>
+					  	<li><a href="services.html">师资力量</a></li>
+					  	<li><a href="blog.html">为了读书</a></li>
+					  	<li><a href="contact.html">留言板</a></li>
+						<li><a href="login.html">登录</a></li>	
+						<li class="active"><a href="register.html">注册</a></li>		
+					</ul>
+				<!-- script-nav -->
+			<script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(500, function(){
+				});
+			});
+			</script>
+			<!-- //script-nav -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+        <!--script-->
+		<script>
+			$(document).ready(function(){
+				$(".top-nav li a").click(function(){
+					$(this).parent().addClass("active");
+					$(this).parent().siblings().removeClass("active");
+				});
+			});
+		</script>
+			<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-home").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop(); 
+				if(scrollpos >=navoffeset){
+					$(".header-home").addClass("fixed");
+				}else{
+					$(".header-home").removeClass("fixed");
+				}
+			 });
+			 
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+	<!--//header-->
+    <div class="box">
+
+        <div class="left">
+            <a href="index.html">
+                <img src="img/2.jpeg" width="100%" height="100%" />
+            </a>
+        </div>
+        <div class="right">
+            <h4>用户注册</h4>
+            <form action="">
+                <input class="acc" type="text" id="username" placeholder="用户名" />
+				<div class="FM" id="FM">
+                    请输入有效账号
+                </div>
+                <input class="acc" type="tel" id="phone" placeholder="手机号" />
+				<div class="FM1" id="FM1">
+                    请输入有效手机号
+                </div>
+                <!-- <input class="acc" type="text" id="card" placeholder="身份证" /> -->
+                <input class="acc" type="password" id="pwd" placeholder="密码" />
+				<div class="FM2" id="FM2">
+                    请输入有效密码
+                </div>
+                <input class="acc" type="password" id="pwd2" placeholder="确认密码" />
+				<div class="FM3" id="FM3">
+                    请重复输入密码
+                </div>
+            </form>
+            <form action="">
+                <input class="submit" type="submit" id="log" value="注册" />
+                <input class="button" type="button" onclick='location.href=("login.html")' value="返回登录">
+            </form>
+        </div>
+    </div>
+    <script src="js/register.js"></script>
+    <div class="copy">
+	    <p>Copyright &copy; 张嘉鹏 网络工程2001 20300104 <a target="_blank" href="http://www.zhangjp.tk//">我的blog</a> <a target="_blank" href="https://0bigbug.github.io">我的网站</a></p>
+    </div>
+<!-- <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div> -->
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>首页</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='#css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!----font-Awesome----->
+<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!--Animation-->
+<script src="js/wow.min.js"></script>
+<link href="css/animate.css" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+	/**
+	 * return 按钮
+	 */
+	$(function () {
+		//获取元素
+		var sliderBar = document.querySelector('.sliderBar');
+		var navbox = document.querySelector('.navbox');
+		var carousel = document.querySelector('.carousel');
+		var goBack = document.querySelector('.goBack');
+
+		//定义变量
+		var navboxTop = navbox.offsetTop;
+		var sliderBarTop = sliderBar.offsetTop - navboxTop;
+		var carouselTop = carousel.offsetTop;
+
+		//添加事件      滚动事件scroll
+		document.addEventListener('scroll', function () {
+			//window.pageYOffset页面被卷去的头部高度
+			if (window.pageYOffset > navboxTop) {
+				//改变sliderBar定位---固定定位
+				sliderBar.style.position = 'fixed';
+				//改变sliderBar距离
+				sliderBar.style.top = sliderBarTop + 'px';
+			} else {
+				//改变sliderBar定位---绝对定位
+				sliderBar.style.position = 'absolute';
+				sliderBar.style.top = '600px';
+			}
+			//返回顶部显示以及隐藏
+			if (window.pageYOffset > carouselTop) {
+				goBack.style.display = 'block';
+			} else {
+				goBack.style.display = 'none';
+			}
+		});
+	});
+</script>
+<style>
+	/*return按钮*/
+.sliderBar {
+    width: 48px;
+    height: 48px;
+    border-radius: 52%;
+    background-color: yellow;
+	opacity: 0.5;
+    color: #565638;
+    padding: 16px;
+    font-size: 24px;
+    line-height: 14px;
+    /*字体行高*/
+    text-align: center;
+    /*文本居中*/
+	position: fixed;
+   /*fixed相对定位，随滚动条移动*/
+    left: 89%;
+    top: 602px;
+}
+.goBack {
+    word-wrap:break-word
+}
+
+.goBack:hover {
+    font-weight: bold;
+    color: black;
+}
+</style>
+
+</head>
+<body>
+<div class="header wow fadeInUpBig" data-wow-delay="0.4s">
+   <div class="container">
+	  <div class="header_top">
+		<h1>张嘉鹏</h1>
+		<h2>20300104</h2>
+		<h2>网络工程2001</h2>
+	  </div>
+   </div>
+ </div>
+  <div class="header-home">
+	<div class="fixed-header">
+		<div class="logo wow bounceInDown" data-wow-delay="0.4s">
+			<a href="index.html">
+	          <span class="secondary">网络工程2001</span>
+	          <span class="main">张嘉鹏</span>
+	        </a>
+		</div>
+		<div class="sliderBar">
+			<span class="goBack"><a href="#top">返</a></span>
+		</div>
+				<div class="top-nav wow bounce" data-wow-delay="0.4s">
+				    <span class="menu"> </span>
+					<ul>
+						<li class="active"><a href="index.html">首页</a></li>
+					  	<li><a href="about.html">关于学校</a></li>
+					  	<li><a href="services.html">师资力量</a></li>
+					  	<li><a href="blog.html">为了读书</a></li>
+					  	<li><a href="contact.html">留言板</a></li>
+						  <li><a href="login.html">登录</a></li>	
+						  <li><a href="register.html">注册</a></li>		
+					</ul>
+				<!-- script-nav -->
+			<script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(500, function(){
+				});
+			});
+			</script>
+			<!-- //script-nav -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+        <!--script-->
+		<script>
+			$(document).ready(function(){
+				$(".top-nav li a").click(function(){
+					$(this).parent().addClass("active");
+					$(this).parent().siblings().removeClass("active");
+				});
+			});
+		</script>
+			<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-home").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop(); 
+				if(scrollpos >=navoffeset){
+					$(".header-home").addClass("fixed");
+				}else{
+					$(".header-home").removeClass("fixed");
+				}
+			 });
+			 
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+	<!--//header-->
+    </div>
+	<div class="grid_1">
+		
+		<div class="container">
+		  <div class="box_1  wow fadeInUpBig" data-wow-delay="0.4s">
+			<h3></h3>
+			<p>习近平总书记指出，学习是立身做人的永恒主题，也是报国为民的重要基础。学习是一辈子的事情，只有在学习中不断感悟人生、提升境界，才会使自己变得更加充实、更加睿智。对广大学生来说，从学校毕业只是人生漫长学习过程中的一小步。要矢志追求更有高度、更有境界、更有品位的人生，把学习作为一种责任、一种爱好、一种健康的生活方式、一种贯穿人生旅途的生活方式，做到重学、好学、乐学。</p>
+		  </div>
+		  <div class="box_2">
+			  <div class="col-md-6">
+			  	<div class="feature  wow fadeInRight" data-wow-delay="0.4s">
+	                   <i class="fa fa-film"> </i>
+	                   <h4>影视</h4>
+	                    <p>
+	                        影视对人的素质的影响是极深远的，在培养人的问题上，影视既是手段，也是目的。
+	                    </p>
+	            </div>
+			  </div>
+			  <div class="col-md-6">
+			  	<div class="feature wow fadeInLeft" data-wow-delay="0.4s">
+	                   <i class="fa fa-check"> </i>
+	                   <h4>计划</h4>
+	                    <p>
+	                        今年度学校将进行大规模升级，以达到各教师配置全球最高端的设备，聘请全球顶尖教师，做最完美学校。
+	                    </p>
+	            </div>
+		      </div>
+		      <div class="clearfix"> </div>
+		  </div>
+		   <div class="box_3 wow bounce" data-wow-delay="0.4s">
+			  <div class="col-md-6">
+			  	<div class="feature">
+	                   <i class="fa fa-trophy"> </i>
+	                   <h4>师资</h4>
+	                    <p>
+	                        我校师资丰富，有全球最顶尖的教师在校职教，请将您的孩子放心送到我们手中。
+	                    </p>
+	            </div>
+			  </div>
+			  <div class="col-md-6">
+			  	<div class="feature">
+	                   <i class="fa fa-microphone"> </i>
+	                   <h4>音乐</h4>
+	                    <p>
+	                        音乐对人的素质的影响是极深远的，在培养人的问题上，音乐既是手段，也是目的。
+	                    </p>
+	            </div>
+		      </div>
+		      <div class="clearfix"> </div>
+		  </div>
+		</div>
+	</div>
+	<div class="grid_2">
+		<div class="container"> 
+			<h3 class="head_1 wow rotateInUpLeft" data-wow-delay="0.4s">学习记录</h3>
+		  <div class="col-md-4 box_6 wow rotateInDownLeft " data-wow-delay="0.4s">
+		  	<img src="images/pic1.jpg" class="img-responsive" alt=""/>
+		  	<div class="desc">
+		  		<h4>讨论</h4>
+		  		<p>学生与学生互相讨论，学习氛围浓厚</p>
+		  		<div class="more"><a href="#"><img src="images/more.png" alt=""></a></div>
+		  	</div>
+		  </div>
+		   <div class="col-md-4 box_6 wow lightSpeedIn" data-wow-delay="0.4s">
+		  	<img src="images/pic2.jpg" class="img-responsive" alt=""/>
+		  	<div class="desc">
+		  		<h4>指导</h4>
+		  		<p>学生虚心接受指导</p>
+		  		<div class="more"><a href="#"><img src="images/more.png" alt=""></a></div>
+		  	</div>
+		  </div>
+		  <div class="col-md-4 box_6 wow rotateIn " data-wow-delay="0.4s">
+		  	<img src="images/pic3.jpg" class="img-responsive" alt=""/>
+		  	<div class="desc">
+				<h4>学生和老师一起拍照</h4>
+				<p>学习氛围浓郁，学生和教师关系好。</p>
+		  		<div class="more"><a href="#"><img src="images/more.png" alt=""></a></div>
+		  	</div>
+		  </div>
+	   </div>
+	</div>
+    <div class="team">
+		<div class="container">
+			<h3 class="head_2 wow rollIn" data-wow-delay="0.4s">欢迎来到我们团队</h3>
+			<div class="img-wrapper wow slideInLeft" data-wow-delay="0.4s">
+              <a href="#"><img src="images/pic6.jpg" class="img-responsive" alt=""/></a>
+              <a href="#"><img src="images/pic7.jpg" class="img-responsive" alt=""/></a>
+              <a href="#"><img src="images/pic4.jpg" class="img-responsive" alt=""/></a>
+            </div>
+            <blockquote class="blockquote1">
+              <div class="block_info wow slideInRight" data-wow-delay="0.4s">
+                <span class="heading">我们的目标：</span>
+                教书育人，为每一个学子尽心尽力
+              </div>
+              <span class="author wow bounce" data-wow-delay="0.4s"><a href="#">春蚕到死丝方尽，蜡炬成灰泪始干</a></span>
+            </blockquote>
+		</div>
+	</div>
+	<div class="students wow  zoomInDown" data-wow-delay="0.4s">
+		<div class="container">
+			<h3>名师寄语</h3>
+			<div class="custom_testimonials_wrap_inner">
+				<address><img src="images/pic5.jpg" class="img-responsive" alt=""/></address>
+				<div class="extra-wrap">
+				<i class="fa quote fa-quote-left"></i>
+				<p>用真心感受学生，以言导行；用真情感动学生，以情育人；用真知充实学生，以才育人；用真理感化学生，以身示范。
+
+					
+					</p>
+				<p class="m_2"><a href="#">-&nbsp;&nbsp; 
+					勤奋厚德，身正行高；以教为命，以校为家；循循善导，培德育能。</a></p>
+				</div>
+				<div class="clearfix"></div> 
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+		  <div class="footer_top">
+			<div class="col-sm-3">
+			   <ul class="list1">
+			   	<h3>校区</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">河北校区</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">哈佛校区</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">清华校区</a></li>
+			     <li><a href="http://www.zhangjp.tk//">北大校区</a></li>
+			   </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="list1">
+			    <h3>校内连接</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">图书馆</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">校内FTP</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">自习室申请</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">教务系统</a></li>
+			  </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="list1">
+			  	<h3>招生专栏</h3>
+			   	 <li><a href="http://www.zhangjp.tk//">招纳贤士</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">招生要求</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">迎新庆典</a></li>
+			   	 <li><a href="http://www.zhangjp.tk//">投资请点击</a></li>
+			  </ul>
+			</div>
+			<div class="col-sm-3">
+			  <ul class="socials">
+                 <li><a href="https://www.facebook.com/profile.php?id=100054048875798"><i class="fa fb fa-facebook"></i></a></li>
+                 <li><a href="#"><i class="fa tw fa-twitter"></i></a></li>
+              </ul>
+              <ul class="list2">
+				<li><strong class="phone">151 0001 3254</strong><br><small>周一 - 周五 / 9.00 - 18.00</small></li>
+				<li>请联系校方<a href="tencent://message/?uin=1753998700&Site=&Menu=yes">QQ:1753998700</a></li>
+			  </ul>
+			</div>
+			<div class="clearfix"> </div>
+		   </div>
+		 </div>
+	</div>
+	
+	<div class="copy">
+	    <p>Copyright &copy; 张嘉鹏 网络工程2001 20300104 <a target="_blank" href="http://www.zhangjp.tk//">我的blog</a> <a target="_blank" href="https://0bigbug.github.io">我的网站</a></p>
+    </div>
+</body>
+</html>		

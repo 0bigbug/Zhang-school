@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>关于学校</title>
+
+<link rel="stylesheet" href="css/text.css">
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lunbo.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='#css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!----font-Awesome----->
+<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!------ light-box-script ----->
+<script src="js/jquery.chocolat.js"></script>
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8" />
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		$('.about-grid a').Chocolat({linkImages:false});
+	});
+</script>
+<!------ light-box-script ----->
+<script type="text/javascript">
+	function load() {
+		init();
+	}
+		// 缩放图片
+		function imgToSize(oBool) {
+			var pic = document.getElementById("pic");
+			pic.style.zoom = parseInt(pic.style.zoom) + (oBool ? 2 : -2) + '%';
+			text.defaultValue=pic.style.zoom;
+		}
+		//还原尺寸
+		function restore() {
+			var pic = document.getElementById("pic");            
+			pic.style.zoom = '100%';
+			pic.style.left = "0px";
+			pic.style.top = "0px";
+			text.defaultValue=pic.style.zoom;
+		}
+		// 旋转图片
+		var current = 0;
+		function imgRoll(direction) {
+			var pic = document.getElementById("pic");
+			if (direction == "left") {
+				current = (current - 90) % 360;
+			}
+			else if (direction == "right") {
+				current = (current + 90) % 360;
+			}
+			pic.style.transform = 'rotate(' + current + 'deg)';
+		}
+		//图片拖拽
+		drag = 0;
+		move = 0;
+		function mousedown() {
+			if (drag) {
+				X1 = window.event.x - parseInt(pic.style.left);
+				Y1 = window.event.y - parseInt(pic.style.top);
+				move = 1;
+			}
+		}
+		function onmouseover() {
+			drag = 1;
+		}
+		function mouseStop() {
+			window.event.returnValue = false;
+		}
+		function mousemove() {
+			if (move) {
+				pic.style.left = (window.event.x - X1) + "px";
+				pic.style.top = (window.event.y - Y1) + "px";
+			}
+		}
+		function mouseup() {
+			move = 0;
+		}
+		function init() {
+			var pic = document.getElementById("pic");
+			pic.style.zoom="100%";
+			pic.style.left="0px";
+			pic.style.top="0px";
+			pic.style.position="relative";
+			pic.style.cursor="move";
+			document.all.pic.onmouseover = onmouseover;
+			document.all.pic.onmousemove = mousemove;
+			document.all.pic.onmousedown = mousedown;
+			document.all.pic.onmouseup = mouseup;
+			document.all.pic.ondragstart = mouseStop;
+		}
+	</script>
+	<style type="text/css">
+		.tuo {
+			font-size: 16px;
+			/* background: url(./images/background.jpg) no-repeat 100% fixed; */
+			background-color: #00000026;
+			background-size: cover;
+			margin: 0px 0px -23px 0px;
+		}
+		</style>
+</head>
+<body onload="load()">
+<div class="header_about"> </div>
+   <div class="header-home">
+	<div class="fixed-header">
+		<div class="logo">
+			<a href="index.html">
+	          <span class="secondary">网络工程2001</span>
+	          <span class="main">张嘉鹏</span>
+	        </a>
+		</div>
+				<div class="top-nav">
+				    <span class="menu"> </span>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+					  	<li class="active"><a href="about.html">关于学校</a></li>
+					  	<li><a href="services.html">师资力量</a></li>
+					  	<li><a href="blog.html">为了读书</a></li>
+					  	<li><a href="contact.html">留言板</a></li>
+						  <li><a href="login.html">登录</a></li>	
+						  <li><a href="register.html">注册</a></li>			
+					</ul>
+				<!-- script-nav -->
+			<script>
+			$("span.menu").click(function(){
+				$(".top-nav ul").slideToggle(500, function(){
+				});
+			});
+			</script>
+			<!-- //script-nav -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+        <!--script-->
+		<script>
+			$(document).ready(function(){
+				$(".top-nav li a").click(function(){
+					$(this).parent().addClass("active");
+					$(this).parent().siblings().removeClass("active");
+				});
+			});
+		</script>
+			<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-home").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop(); 
+				if(scrollpos >=navoffeset){
+					$(".header-home").addClass("fixed");
+				}else{
+					$(".header-home").removeClass("fixed");
+				}
+			 });
+			 
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+	<!--//header-->
+	<div class="slider">
+        <ul class="slider-main" style="list-style-type:none;">
+            <li class="slider-panel">
+                <a href="about.html" target="_blank"><img alt="轮播图1" title="轮播图1" style="margin-left: -40px;" src="images/xue1.jpg"></a>
+            </li>
+            <li class="slider-panel">
+                <a href="#" target="_blank"><img alt="轮播图2" title="轮播图2" style="margin-left: -40px;" src="images/xue2.jpg"></a>
+            </li>
+            <li class="slider-panel">
+                <a href="#" target="_blank"><img alt="轮播图3" title="轮播图3" style="margin-left: -40px;" src="images/xue3.jpg"></a>
+            </li>
+            <li class="slider-panel">
+                <a href="#" target="_blank"><img alt="轮播图4" title="轮播图4" style="margin-left: -40px;" src="images/xue4.jpg"></a>
+            </li>
+        </ul>
+        <div class="slider-extra">
+            <ul class="slider-nav">
+                <li class="slider-item">1</li>
+                <li class="slider-item">2</li>
+                <li class="slider-item">3</li>
+                <li class="slider-item">4</li>
+            </ul>
+            <div class="slider-page">
+                <a class="slider-pre" href="javascript:;;">&lt;</a>
+                <a class="slider-next" href="javascript:;;">&gt;</a>
+            </div>
+        </div>
+
+    </div>
+	<div class="grid_3">
+		<div class="container"> 
+			<h3>董事会</h3>
+		  <div class="about-grids">
+						<div class="col-sm-3 about-grid">
+							<a href="images/s1.jpg" title="name" rel="title2">
+						    <div class="view view-first">
+                              <img src="images/s1_1.jpg" class="img-responsive" alt=""/>
+                              <div class="mask">
+                                <div class="info"><img src="images/magnify-alt.png" alt=""></div>
+		                      </div>
+                             </div>
+							</a>
+							<h4>校长</a></h4>
+							<p>张嘉鹏</p>
+						</div>
+						<div class="col-sm-3 about-grid">
+							<a href="images/s2.jpg" title="name" rel="title2">
+						    <div class="view view-first">
+                              <img src="images/s2_1.jpg" class="img-responsive" alt=""/>
+                              <div class="mask">
+                                <div class="info"><img src="images/magnify-alt.png" alt=""></div>
+		                      </div>
+                             </div>
+							</a>
+							<h4>副校长</a></h4>
+							<p>多托雷</p>
+						</div>
+						<div class="col-sm-3 about-grid">
+							<a href="images/s3.jpg" title="name" rel="title2">
+						    <div class="view view-first">
+                              <img src="images/s3_1.jpg" class="img-responsive" alt=""/>
+                              <div class="mask">
+                                <div class="info"><img src="images/magnify-alt.png" alt=""></div>
+		                      </div>
+                             </div>
+							</a>
+							<h4>副校长</a></h4>
+							<p>特朗普</p>
+						</div>
+						<div class="col-sm-3 about-grid">
+							<a href="images/s4.jpg" title="name" rel="title2">
+						    <div class="view view-first">
+                              <img src="images/s4_1.jpg" class="img-responsive" alt=""/>
+                              <div class="mask">
+                                <div class="info"><img src="images/magnify-alt.png" alt=""></div>
+		                      </div>
+                             </div>
+							</a>
+							<h4>副校长</a></h4>
+							<p>慢羊羊</p>
+						</div>
+				        <div class="clearfix"> </div>
+	      </div>
+	   </div>
+	</div>
+	<div class="tuo" style="text-align:center;">
+		<img id="1234" src="./images/s111.jpg" height="300" width="500" />
+		<img id="123" src="./images/s112.jpg" height="300" width="500" />
+        <img id="pic" src="./images/s113.jpg" height="300" width="500" />
+		
+		<div class="btn">
+			<button class="btnleft" onclick="imgRoll('left');">左转</button>
+			<button class="btnright" onclick="imgRoll('right');">右转</button>
+			<button class="btnup" onclick="imgToSize(1);">放大</button>
+			<button class="btndown" onclick="imgToSize(0);">缩小</button>
+			<button class="btnreturn" onclick="restore();">还原</button>
+		</div>
+    </div>
+<br/>
+
+<div class="footer">
+	<div class="container">
+	  <div class="footer_top">
+		<div class="col-sm-3">
+		   <ul class="list1">
+			   <h3>校区</h3>
+				<li><a href="http://www.zhangjp.tk//">河北校区</a></li>
+				<li><a href="http://www.zhangjp.tk//">哈佛校区</a></li>
+				<li><a href="http://www.zhangjp.tk//">清华校区</a></li>
+			 <li><a href="http://www.zhangjp.tk//">北大校区</a></li>
+		   </ul>
+		</div>
+		<div class="col-sm-3">
+		  <ul class="list1">
+			<h3>校内连接</h3>
+				<li><a href="http://www.zhangjp.tk//">图书馆</a></li>
+				<li><a href="http://www.zhangjp.tk//">校内FTP</a></li>
+				<li><a href="http://www.zhangjp.tk//">自习室申请</a></li>
+				<li><a href="http://www.zhangjp.tk//">教务系统</a></li>
+		  </ul>
+		</div>
+		<div class="col-sm-3">
+		  <ul class="list1">
+			  <h3>招生专栏</h3>
+				<li><a href="http://www.zhangjp.tk//">招纳贤士</a></li>
+				<li><a href="http://www.zhangjp.tk//">招生要求</a></li>
+				<li><a href="http://www.zhangjp.tk//">迎新庆典</a></li>
+				<li><a href="http://www.zhangjp.tk//">投资请点击</a></li>
+		  </ul>
+		</div>
+		<div class="col-sm-3">
+		  <ul class="socials">
+			 <li><a href="https://www.facebook.com/profile.php?id=100054048875798"><i class="fa fb fa-facebook"></i></a></li>
+			 <li><a href="#"><i class="fa tw fa-twitter"></i></a></li>
+		  </ul>
+		  <ul class="list2">
+			<li><strong class="phone">151 0001 3254</strong><br><small>周一 - 周五 / 9.00 - 18.00</small></li>
+			<li>请联系校方<a href="tencent://message/?uin=1753998700&Site=&Menu=yes">QQ:1753998700</a></li>
+		  </ul>
+		</div>
+		<div class="clearfix"> </div>
+	   </div>
+	 </div>
+</div>
+	<div class="copy">
+	    <p>Copyright &copy; 张嘉鹏 网络工程2001 20300104 <a target="_blank" href="http://www.zhangjp.tk//">我的blog</a> <a target="_blank" href="https://0bigbug.github.io">我的网站</a></p>
+    </div>
+</body>
+</html>		

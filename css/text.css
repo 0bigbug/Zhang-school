@@ -1,0 +1,127 @@
+.slider,
+.slider-panel img,
+.slider-extra {
+    width: 1465px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slider {
+    /* text-align: center; */
+    margin: 0px auto;
+    position: relative;
+    background: rgb(0 0 0 / 20%) url(images/xue2.jpg);
+}
+
+
+/* .slider-main {
+    text-align: center;
+} */
+
+.slider-panel,
+.slider-nav,
+.slider-pre,
+.slider-next {
+    position: absolute;
+    z-index: 8;
+    list-style: none;
+}
+
+.slider-panel {
+    position: absolute;
+}
+
+.slider-panel img {
+    border: none;
+}
+
+.slider-extra {
+    position: relative;
+    display: block;
+}
+
+.slider-nav {
+    margin-left: -51px;
+    position: absolute;
+    left: 45%;
+    bottom: 4px;
+}
+
+.slider-nav li {
+    background: #3e3e3e;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 2px;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+}
+
+.slider-nav .slider-item-selected {
+    background: blue;
+}
+
+.slider-page a {
+    background: rgba(0, 0, 0, 0.2);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#33000000, endColorstr=#33000000);
+    color: #fff;
+    text-align: center;
+    display: block;
+    font-family: "simsun";
+    font-size: 22px;
+    width: 28px;
+    height: 62px;
+    line-height: 62px;
+    margin-top: -31px;
+    position: absolute;
+    top: 50%;
+}
+
+.slider-page a:HOVER {
+    background: rgba(0, 0, 0, 0.4);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
+}
+
+.slider-next {
+    left: 100%;
+    margin-left: -28px;
+}
+
+.time-item {
+    width: 225px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.time-item strong {
+    background: orange;
+    color: #fff;
+    line-height: 49px;
+    font-size: 36px;
+    font-family: Arial;
+    padding: 0 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.time-item>span {
+    float: left;
+    line-height: 49px;
+    color: orange;
+    font-size: 32px;
+    margin: 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    width: 390px;
+    height: 20px;
+    margin: 20px auto 10px auto;
+}
+
